@@ -1,33 +1,303 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+*{
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
 
-.App-header {
-  background-color: #282c34;
+.app{
+  background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8792d3, #7689c5, #6580b7, #4c6495, #354974, #1d3054, #051937);
   min-height: 100vh;
+}
+
+nav{
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
+  min-height:8vh ;
+  font-family: 'Poppins', sans-serif;
+  
+}
+
+.logo{
+  color: whitesmoke;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.nav-links{
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+}
+
+.nav-links a{
+  color: bisque;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: 0.5s;
+ 
+}
+.nav-links li{
+  list-style: none;
+  cursor: pointer;
+  padding-right: 5px;
+  padding-top: 5px;
+}
+
+.nav-links a:hover{
+  color: black;
+  font-weight: bold
+
+}
+html,body, .app{
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.menu div{
+  width: 25px;
+  height: 3px;
+  background-color: bisque;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.menu{
+  display: none;
+}
+#element{
+  width: 290px;
+  height: 400px;
+  cursor: pointer;
+  margin: 35px
+  }
+  
+
+.elements{
+  margin-top:25px; 
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%
+  
 }
 
-.App-link {
-  color: #61dafb;
+
+@media screen and (max-width:780px){
+  html,body, .app{
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .nav-links{
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 12%;
+    background-color:#051937;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%; 
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+
+  }
+
+  .nav-links li{
+    opacity: 0;
+  }
+  .nav-links li{
+    animation: nav_fade 0.5s ease-in-out;
+  }
+
+  .menu{
+    display: block;
+
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.nav-active{
+  transform: translateX(0%);
+  z-index:1;
+}
+
+.nav-links > li{
+  animation: nav_fade 0.2s ease forwards
+}
+
+
+@keyframes nav_fade{
+  from{
+      opacity: 0;
+      transform: translateX(50px);
   }
-  to {
-    transform: rotate(360deg);
+  to{
+    opacity: 1;
+    transform: translateX(0px);
   }
 }
+
+.toggle .line1{
+  transform: rotate(-45deg) translate(-6px,5px)
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+  transform: rotate(45deg)translate(-6px,-5px)
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color:#354974;
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,5,0.2);
+  z-index: 1;
+  padding:10px 8px;
+  font-size: 15px
+}
+
+.flexV{
+  display: flex;
+  width: 190px;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.categoriesDrop:hover .dropdown-content {
+  display: block;
+} 
+
+.animeSpanDesc{
+
+      color: white;
+}
+
+.pagi{
+
+    display: flex;
+    justify-content: center;
+    height: 100px;
+}
+
+
+.main{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footer{
+  background-color: white;
+}
+
+
+.about p{
+    width: 370px;
+    font-family: 'Poppins', sans-serif;
+    font-weight:bold;
+    font-size: 12px
+  }
+  .cc{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-right: 20px;
+    font-weight: bold
+  }
+
+    .main_player{
+      padding: 100px 50px;
+      display: flex;
+      flex-direction: column;
+    }
+
+  .vid_serv{
+    margin-top: 20px;
+  }
+
+  .anim_det{
+    padding: 10px 30px
+  }
+
+
+  .insideCard{
+    height: 430px;
+  }
+
+  .insideCardI{
+    height: 400px;
+    position: relative;
+  }
+
+  #element_ep{
+    width: 300px;
+    height: 450px;
+    cursor: pointer;
+    margin: 15px
+    }
+
+    #element:hover #imgCover {
+      box-shadow: 0 30px 50px rgba(0, 0, 0, .2);
+      animation: moveIn 1s forwards ;
+    }
+
+    .CardDesc {
+     margin-top: -40%;
+     text-align: center;
+     font-size: 13px;
+     overflow: hidden;
+     text-overflow: ellipsis;
+          
+    }
+
+
+    .bck_btn{
+      margin-top: -50px;
+      margin-bottom: 15px
+
+    }
+
+    li{
+      list-style-type: none;
+    }
+
+    #imgCover{
+      max-width:100%;
+    height:100%;
+    animation: moveOut 1s forwards ;
+    
+    }
+
+    .singleComment{
+     
+     background-color: white;
+     border-radius: 5px;
+    }
+    .commentsDiv{
+      margin-left: 3%; 
+    }
+    .commentAvatar{
+      margin-left: 1%;
+    }
+    
+    @keyframes moveIn {
+      0%   { transform:scale(1) ; top:0px; border-radius: 0%;}
+      100%  {transform:scale(0.5); top:-90px;border-radius: 50%;}
+    }
+
+
+    @keyframes moveOut {
+      0%  {transform:scale(0.5); top:-90px;border-radius: 50%;} 
+      100%  { transform:scale(1) ; top:0px; border-radius: 0%;}
+    }
+
+  
+    
